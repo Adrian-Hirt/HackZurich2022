@@ -727,9 +727,9 @@
             "actions": [
                 {
                     "name": "Select",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "ac96c10b-c955-4a46-8e67-bf16bc069b53",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -810,22 +810,22 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "59952a61-9296-4db2-842f-398928d6db09",
-                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "id": "24d656e5-f611-406c-8b16-16875bb3a645",
+                    "path": "<OculusTouchController>/primaryButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Generic XR Controller",
+                    "groups": "",
                     "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "77150488-d6e6-4f31-8a03-236a9a894861",
-                    "path": "<XRController>{RightHand}/trigger",
+                    "id": "ed038f2d-52ff-4460-b639-bb12ad9380c1",
+                    "path": "<OculusTouchController>/primaryButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Generic XR Controller",
+                    "groups": "",
                     "action": "Select Value",
                     "isComposite": false,
                     "isPartOfComposite": false
