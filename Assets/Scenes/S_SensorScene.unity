@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.59937525, g: 0.5997512, b: 0.59948856, a: 1}
+  m_IndirectSpecularColor: {r: 0.5993783, g: 0.5997548, b: 0.599493, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2085,7 +2085,7 @@ MeshCollider:
   m_GameObject: {fileID: 312849924}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -4893,6 +4893,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bad64b7ed5a93847a3ee7d92d5295af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prismaCube: {fileID: 1486713095}
+  cameraObj: {fileID: 713815753}
+  laserObj: {fileID: 931509808}
   move: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   thumbAxis: {x: 0, y: 0}
 --- !u!1 &908992167
