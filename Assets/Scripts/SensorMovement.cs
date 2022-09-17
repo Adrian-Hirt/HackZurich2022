@@ -29,7 +29,8 @@ public class SensorMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         thumbAxis = context.ReadValue<Vector2>();
-        Debug.Log("Stick: " + thumbAxis.x + "/" + thumbAxis.y);
+        transform.Rotate(0, 0, thumbAxis.y);
+        transform.Find("Camera").transform.Rotate(thumbAxis.x, 0, 0);
     }
 
     private void OnEnable()
