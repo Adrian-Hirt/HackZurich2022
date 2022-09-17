@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3196503589132969871}
   - component: {fileID: 1611438664940641278}
   - component: {fileID: 4310626632666294846}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cylinder 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1611438664940641278
 MeshFilter:
