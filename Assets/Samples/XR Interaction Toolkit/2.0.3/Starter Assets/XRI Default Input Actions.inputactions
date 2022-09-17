@@ -796,6 +796,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Move Sensor",
+                    "type": "Button",
+                    "id": "ba69b91c-f4e8-4a9c-98d5-06bc57d512ae",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -972,6 +981,61 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Translate Anchor",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "cf3c87dc-e7fd-468a-9ca0-a3b1fe16f908",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "",
+                    "action": "Move Sensor",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "2ee3099d-d7a8-4dff-b558-7c75f293a11a",
+                    "path": "<XRController>{RightHand}/Primary2DAxis/y",
+                    "interactions": "",
+                    "processors": "Clamp(max=1)",
+                    "groups": "Generic XR Controller",
+                    "action": "Move Sensor",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "c3da7ad5-23ec-48c0-8a88-5b3f871b2624",
+                    "path": "<XRController>{RightHand}/Primary2DAxis/y",
+                    "interactions": "",
+                    "processors": "Clamp(min=-1),Invert",
+                    "groups": "Generic XR Controller",
+                    "action": "Move Sensor",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "0b570950-4078-4fe3-93c8-6f60191181ac",
+                    "path": "<XRController>{RightHand}/Primary2DAxis/x",
+                    "interactions": "",
+                    "processors": "Clamp(min=-1),Invert",
+                    "groups": "Generic XR Controller",
+                    "action": "Move Sensor",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "43973ff5-0adb-4f4d-9ad7-e78db8f767c2",
+                    "path": "<XRController>{RightHand}/Primary2DAxis/x",
+                    "interactions": "",
+                    "processors": "Clamp(max=1)",
+                    "groups": "Generic XR Controller",
+                    "action": "Move Sensor",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
