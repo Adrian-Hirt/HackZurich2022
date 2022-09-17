@@ -727,12 +727,12 @@
             "actions": [
                 {
                     "name": "Select",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "ac96c10b-c955-4a46-8e67-bf16bc069b53",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Select Value",
@@ -799,19 +799,19 @@
                 },
                 {
                     "name": "Move Sensor",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "ba69b91c-f4e8-4a9c-98d5-06bc57d512ae",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "1ce80054-410d-4112-a332-50faa7fb4f23",
-                    "path": "<XRController>{RightHand}/gripPressed",
+                    "id": "59952a61-9296-4db2-842f-398928d6db09",
+                    "path": "<XRController>{RightHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
@@ -821,8 +821,8 @@
                 },
                 {
                     "name": "",
-                    "id": "dd433817-216c-46b9-8dd3-f3a4ea1767b9",
-                    "path": "<XRController>{RightHand}/grip",
+                    "id": "77150488-d6e6-4f31-8a03-236a9a894861",
+                    "path": "<XRController>{RightHand}/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
@@ -983,61 +983,6 @@
                     "action": "Translate Anchor",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "2D Vector",
-                    "id": "cf3c87dc-e7fd-468a-9ca0-a3b1fe16f908",
-                    "path": "2DVector(mode=2)",
-                    "interactions": "",
-                    "processors": "StickDeadzone",
-                    "groups": "",
-                    "action": "Move Sensor",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "2ee3099d-d7a8-4dff-b558-7c75f293a11a",
-                    "path": "<XRController>{RightHand}/Primary2DAxis/y",
-                    "interactions": "",
-                    "processors": "Clamp(max=1)",
-                    "groups": "Generic XR Controller",
-                    "action": "Move Sensor",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "c3da7ad5-23ec-48c0-8a88-5b3f871b2624",
-                    "path": "<XRController>{RightHand}/Primary2DAxis/y",
-                    "interactions": "",
-                    "processors": "Clamp(min=-1),Invert",
-                    "groups": "Generic XR Controller",
-                    "action": "Move Sensor",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "0b570950-4078-4fe3-93c8-6f60191181ac",
-                    "path": "<XRController>{RightHand}/Primary2DAxis/x",
-                    "interactions": "",
-                    "processors": "Clamp(min=-1),Invert",
-                    "groups": "Generic XR Controller",
-                    "action": "Move Sensor",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "43973ff5-0adb-4f4d-9ad7-e78db8f767c2",
-                    "path": "<XRController>{RightHand}/Primary2DAxis/x",
-                    "interactions": "",
-                    "processors": "Clamp(max=1)",
-                    "groups": "Generic XR Controller",
-                    "action": "Move Sensor",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         },
@@ -1133,6 +1078,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f38d1f42-8554-4dd9-b186-0a90f21f4734",
+                    "path": "<OculusTouchController>{RightHand}/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
