@@ -28,7 +28,7 @@ public class SensorMovement : MonoBehaviour
             new Vector2(prismaOrigin.x, prismaOrigin.z));
 
         var textMesh = screenText.GetComponent<TextMesh>();
-        textMesh.text = "Distance: " + Math.Round(distance, 3);
+        textMesh.text = "Distance: " + Math.Round(distance, 3) + " [m]";
 
         if (true)
         {
