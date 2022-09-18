@@ -22,20 +22,34 @@ public class SensorMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Set screen text
         var laserOrigin = laserObj.transform.position;
         var prismaOrigin = prismaCube.transform.position;
         var distance = Vector2.Distance(new Vector2(laserOrigin.x, laserOrigin.z),
             new Vector2(prismaOrigin.x, prismaOrigin.z));
-
         var textMesh = screenText.GetComponent<TextMesh>();
-        textMesh.text = "Distance: " + Math.Round(distance, 3) + " [m]";
 
         if (true)
         {
+            textMesh.text = "Distance: " + Math.Round(distance, 3) + " [m]";
+            
             hiddenLaserObj.transform.LookAt(prismaCube.transform);
 
             transform.rotation = Quaternion.Euler(0, hiddenLaserObj.transform.eulerAngles.y, 0);
             cameraObj.transform.localRotation = Quaternion.Euler(hiddenLaserObj.transform.eulerAngles.x + 90, 0, 0);
+        }
+        else
+        {
+            // Do raycasting
+            RaycastHit hitInfo;
+            if (Physics.Raycast(laserObj.transform.position, laserObj.transform.forward, out hitInfo, 2000))
+            {
+                textMesh.text = "Distance: " + Math.Round(hitInfo.distance, 3) + " [m]";
+            }
+            else
+            {
+                textMesh.text = "Distance: Too far! [m]";
+            }
         }
     }
 
