@@ -5094,7 +5094,10 @@ MonoBehaviour:
   cameraObj: {fileID: 713815753}
   laserObj: {fileID: 931509808}
   hiddenLaserObj: {fileID: 1025297336}
-  move: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  moveRight: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  moveLeft: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
   secondary: {fileID: 6666192136853790809, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   thumbAxis: {x: 0, y: 0}
@@ -7985,7 +7988,7 @@ Camera:
     height: 0.5625
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 22
   orthographic: 0
   orthographic size: 5
   m_Depth: 0

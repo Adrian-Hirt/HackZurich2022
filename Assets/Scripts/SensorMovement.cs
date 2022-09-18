@@ -10,7 +10,8 @@ public class SensorMovement : MonoBehaviour
     public GameObject cameraObj = null;
     public GameObject laserObj = null;
     public GameObject hiddenLaserObj = null;
-    public InputActionReference move = null;
+    public InputActionReference moveRight = null;
+    public InputActionReference moveLeft = null;
     public InputActionReference secondary = null;
     public Vector2 thumbAxis;
 
@@ -20,7 +21,8 @@ public class SensorMovement : MonoBehaviour
 
     private void Awake()
     {
-        move.action.performed += Move;
+        moveRight.action.performed += MoveRight;
+        moveLeft.action.performed += MoveLeft;
         secondary.action.performed += SecondaryPressed;
     }
 
@@ -62,11 +64,35 @@ public class SensorMovement : MonoBehaviour
     {
     }
 
-    public void Move(InputAction.CallbackContext context)
+    public void MoveRight(InputAction.CallbackContext context)
     {
         thumbAxis = context.ReadValue<Vector2>();
         transform.Rotate(0, thumbAxis.x, 0);
         cameraObj.transform.Rotate(-thumbAxis.y, 0, 0);
+    }
+    
+    public void MoveLeft(InputAction.CallbackContext context)
+    {
+        var leftAxis = context.ReadValue<Vector2>();
+        var cameraSoos = cameraObj.GetComponentInChildren<Camera>();
+        if (leftAxis.y > 0)
+        {
+            cameraSoos.fieldOfView -= 0.1f;
+        }
+        else
+        {
+            cameraSoos.fieldOfView += + 0.1f;
+        }
+
+        if (cameraSoos.fieldOfView > 60)
+        {
+            cameraSoos.fieldOfView = 60;
+        }
+
+        if (cameraSoos.fieldOfView < 2)
+        {
+            cameraSoos.fieldOfView = 2;
+        }
     }
 
     public void SecondaryPressed(InputAction.CallbackContext context) {
@@ -75,11 +101,15 @@ public class SensorMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        move.action.Enable();
+        moveRight.action.Enable();
+        moveLeft.action.Enable();
+        secondary.action.Enable();
     }
 
     private void OnDisable()
     {
-        move.action.Disable();
+        moveRight.action.Disable();
+        moveLeft.action.Disable();
+        secondary.action.Disable();
     }
 }

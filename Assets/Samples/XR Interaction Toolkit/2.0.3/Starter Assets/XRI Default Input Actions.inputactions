@@ -556,11 +556,11 @@
                 },
                 {
                     "name": "",
-                    "id": "8e383b1a-270f-4c20-819b-89a59cffb498",
-                    "path": "<XRController>{LeftHand}/Primary2DAxis",
+                    "id": "71bc9a81-7bbb-45a2-a64e-6c07de4e8e91",
+                    "path": "<OculusTouchController>{LeftHand}/thumbstick",
                     "interactions": "",
-                    "processors": "StickDeadzone",
-                    "groups": "Continuous Move",
+                    "processors": "",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
