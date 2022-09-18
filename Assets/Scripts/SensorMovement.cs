@@ -9,6 +9,7 @@ public class SensorMovement : MonoBehaviour
     public GameObject prismaCube = null;
     public GameObject cameraObj = null;
     public GameObject laserObj = null;
+    public GameObject hiddenLaserObj = null;
     public InputActionReference move = null;
     public Vector2 thumbAxis;
 
@@ -31,14 +32,10 @@ public class SensorMovement : MonoBehaviour
 
         if (true)
         {
-            Vector3 targetVectorCamera = prismaCube.transform.position - cameraObj.transform.position;
-            var rotationCamera = Quaternion.FromToRotation(laserObj.transform.forward, targetVectorCamera).eulerAngles;
-            
-            Vector3 targetVectorBase = prismaCube.transform.position - transform.position;
-            var rotationBase = Quaternion.FromToRotation(transform.forward, targetVectorBase).eulerAngles;
-            
-            transform.Rotate(0, rotationBase.y, 0);
-            cameraObj.transform.Rotate(rotationCamera.x, 0, 0);
+            hiddenLaserObj.transform.LookAt(prismaCube.transform);
+
+            transform.rotation = Quaternion.Euler(0, hiddenLaserObj.transform.eulerAngles.y, 0);
+            cameraObj.transform.localRotation = Quaternion.Euler(hiddenLaserObj.transform.eulerAngles.x + 90, 0, 0);
         }
     }
 
