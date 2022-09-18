@@ -12,19 +12,23 @@ public class SensorMovement : MonoBehaviour
     public InputActionReference move = null;
     public Vector2 thumbAxis;
 
+    public GameObject screenText = null;
+
     private void Awake()
     {
         move.action.performed += Move;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
+        var laserOrigin = laserObj.transform.position;
+        var prismaOrigin = prismaCube.transform.position;
+        var distance = Vector2.Distance(new Vector2(laserOrigin.x, laserOrigin.z),
+            new Vector2(prismaOrigin.x, prismaOrigin.z));
+
+        var textMesh = screenText.GetComponent<TextMesh>();
+        textMesh.text = "Distance: " + Math.Round(distance, 3);
+
         if (true)
         {
             Vector3 targetVectorCamera = prismaCube.transform.position - cameraObj.transform.position;
@@ -41,9 +45,8 @@ public class SensorMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
-    
+
     public void Move(InputAction.CallbackContext context)
     {
         thumbAxis = context.ReadValue<Vector2>();
