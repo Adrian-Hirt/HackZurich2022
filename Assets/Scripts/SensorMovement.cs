@@ -11,13 +11,17 @@ public class SensorMovement : MonoBehaviour
     public GameObject laserObj = null;
     public GameObject hiddenLaserObj = null;
     public InputActionReference move = null;
+    public InputActionReference secondary = null;
     public Vector2 thumbAxis;
 
     public GameObject screenText = null;
 
+    private bool followPrismRod = false;
+
     private void Awake()
     {
         move.action.performed += Move;
+        secondary.action.performed += SecondaryPressed;
     }
 
     private void FixedUpdate()
@@ -29,7 +33,7 @@ public class SensorMovement : MonoBehaviour
             new Vector2(prismaOrigin.x, prismaOrigin.z));
         var textMesh = screenText.GetComponent<TextMesh>();
 
-        if (true)
+        if (followPrismRod)
         {
             textMesh.text = "Distance: " + Math.Round(distance, 3) + " [m]";
             
@@ -63,6 +67,10 @@ public class SensorMovement : MonoBehaviour
         thumbAxis = context.ReadValue<Vector2>();
         transform.Rotate(0, thumbAxis.x, 0);
         cameraObj.transform.Rotate(-thumbAxis.y, 0, 0);
+    }
+
+    public void SecondaryPressed(InputAction.CallbackContext context) {
+        followPrismRod = !followPrismRod;
     }
 
     private void OnEnable()

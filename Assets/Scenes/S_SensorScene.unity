@@ -5095,6 +5095,8 @@ MonoBehaviour:
   laserObj: {fileID: 931509808}
   hiddenLaserObj: {fileID: 1025297336}
   move: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  secondary: {fileID: 6666192136853790809, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
   thumbAxis: {x: 0, y: 0}
   screenText: {fileID: 159754908}
 --- !u!1 &908992167

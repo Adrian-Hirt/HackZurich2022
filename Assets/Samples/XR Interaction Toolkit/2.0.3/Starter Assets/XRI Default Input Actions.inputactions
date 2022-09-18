@@ -805,6 +805,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Secondary",
+                    "type": "Button",
+                    "id": "d3455554-987f-4ade-9f5e-3332ecfb80e4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Secondary Value",
+                    "type": "Value",
+                    "id": "ed0798b8-9d9f-4446-83e2-26ec675be566",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -1005,6 +1023,28 @@
                     "action": "Translate Anchor",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "5398c4c3-6f42-4806-9a20-4623fcc47602",
+                    "path": "<OculusTouchController>/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Secondary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e72e1849-7d5e-43eb-8142-ca878c0b882c",
+                    "path": "<OculusTouchController>/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Secondary Value",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
